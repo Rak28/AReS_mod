@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/drugNameItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:text="1.Dolo 650"
+        app:layout_constraintEnd_toStartOf="@+id/route"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/morningSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Morning"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/afternoonSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drugNameItem" />
+
+    <Switch
+        android:id="@+id/afternoonSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Afternoon"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/nightSwitch"
+        app:layout_constraintStart_toEndOf="@+id/morningSwitch"
+        app:layout_constraintTop_toTopOf="@+id/morningSwitch" />
+
+    <Switch
+        android:id="@+id/nightSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Night"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/afternoonSwitch"
+        app:layout_constraintTop_toTopOf="@+id/afternoonSwitch" />
+
+    <EditText
+        android:id="@+id/days"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background"
+        android:inputType="textPersonName"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/daysView"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
+
+    <TextView
+        android:id="@+id/daysView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="day(s)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/afternoonSwitch"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
+
+    <EditText
+        android:id="@+id/route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background"
+        android:inputType="textPersonName"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Tablet"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/days"
+        app:layout_constraintStart_toEndOf="@+id/drugNameItem"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:text="New Prescription"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/background"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background"
+        android:hint="Age"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@+id/bp"
+        app:layout_constraintEnd_toStartOf="@+id/bp"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/bp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background"
+        android:hint="BP"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/weight"
+        app:layout_constraintEnd_toStartOf="@+id/weight"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toTopOf="@+id/age" />
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:hint="Weight"
+        android:background="@drawable/background"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bp"
+        app:layout_constraintTop_toTopOf="@+id/bp" />
+
+    <EditText
+        android:id="@+id/sickness"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/background"
+        android:ems="10"
+        android:hint="Sickness"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sickness">
+
+        <EditText
+            android:id="@+id/route2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/background"
+            android:inputType="textPersonName"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Tablet"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/drugName"
+            app:layout_constraintTop_toBottomOf="@+id/drugName" />
+
+        <EditText
+            android:id="@+id/days2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:inputType="textPersonName"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/daysView2"
+            app:layout_constraintTop_toTopOf="@+id/route2" />
+
+        <TextView
+            android:id="@+id/daysView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="day(s)"
+            app:layout_constraintEnd_toEndOf="@+id/addButton"
+            app:layout_constraintTop_toTopOf="@+id/days2" />
+
+        <Switch
+            android:id="@+id/morningSwitch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Morning"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/afternoonSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/route2" />
+
+        <Switch
+            android:id="@+id/afternoonSwitch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Afternoon"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/nightSwitch2"
+            app:layout_constraintStart_toEndOf="@+id/morningSwitch2"
+            app:layout_constraintTop_toTopOf="@+id/morningSwitch2" />
+
+        <Switch
+            android:id="@+id/nightSwitch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Night"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/afternoonSwitch"
+            app:layout_constraintTop_toTopOf="@+id/afternoonSwitch2" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <AutoCompleteTextView
+            android:id="@+id/drugName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background"
+            android:hint="Drug"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/addButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:clipToPadding="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/afternoonSwitch2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
