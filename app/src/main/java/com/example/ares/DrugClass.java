@@ -2,20 +2,26 @@ package com.example.ares;
 
 public class DrugClass {
 
+    private int index;
     private String drugName;
     private String route;
     private String days;
+    private String rxcode;
     private boolean morning;
     private boolean afternoon;
     private boolean night;
+    private String date;
 
-    public DrugClass(String drugName, String route, String days, boolean morning, boolean afternoon, boolean night) {
+    public DrugClass(int index, String drugName, String route, String days, String rxcode, boolean morning, boolean afternoon, boolean night, String date) {
+        this.index = index;
         this.drugName = drugName;
         this.route = route;
         this.days = days;
+        this.rxcode = rxcode;
         this.morning = morning;
         this.afternoon = afternoon;
         this.night = night;
+        this.date = date;
     }
 
     public DrugClass(String drugName) {
@@ -27,6 +33,10 @@ public class DrugClass {
         this.night = false;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
     public String getDrugName() {
         return drugName;
     }
@@ -35,12 +45,21 @@ public class DrugClass {
         return days;
     }
 
+    public String getRxcode() {
+        return rxcode;
+    }
+
+
     public boolean isMorning() {
         return morning;
     }
 
     public boolean isAfternoon() {
         return afternoon;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public boolean isNight() {

@@ -1,0 +1,15 @@
+package com.example.ares;
+
+import java.util.ArrayList;
+
+public class Prescription {
+    private ArrayList<DrugClass> drugClassArrayList;
+
+    public Prescription(ArrayList<DrugClass> drugClassArrayList) {
+        this.drugClassArrayList = drugClassArrayList;
+    }
+
+    public ArrayList<DrugClass> getDrugClassArrayList() {
+        return drugClassArrayList;
+    }
+}

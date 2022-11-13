@@ -5,11 +5,18 @@
       <map>
         <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/drawable/background.xml" value="0.21875" />
         <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/drawable/button_bg.xml" value="0.37864583333333335" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/drawable/main_bg.xml" value="0.23914473684210527" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/activity_login_page.xml" value="0.25" />
         <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/activity_maps_screen.xml" value="0.29342105263157897" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/activity_patient_layout.xml" value="0.29342105263157897" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/fragment_maps.xml" value="0.29342105263157897" />
         <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/item_drug.xml" value="0.25" />
-        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/listview_layout.xml" value="0.33" />
-        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/new_prescription.xml" value="0.33" />
-        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/pdf_layout.xml" value="0.25" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/listview_layout.xml" value="0.75" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/new_prescription.xml" value="0.67" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/pdf_item.xml" value="0.67" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/pdf_layout.xml" value="0.5" />
+        <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/prescription_item.xml" value="0.5" />
         <entry key="..\:/RAKSHITH/AndroidStudioProjects/AReS/app/src/main/res/layout/test.xml" value="0.2" />
       </map>
     </option>

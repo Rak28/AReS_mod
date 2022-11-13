@@ -17,25 +17,22 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.provider.DocumentsContract;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,17 +40,16 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Text;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,12 +62,17 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter adapter;
     private Switch morning, afternoon, night;
     private EditText route, days;
+    private int index;
+
+    private String date;
 
     private DrugAdapter drugAdapter;
     private ArrayList<DrugClass> drugClassArrayList;
+    private PrescriptionAdapter prescriptionAdapter;
+    private ArrayList<Prescription> prescriptionArrayList;
 
-    RecyclerView recyclerView;
-    AutoCompleteTextView drugName;
+    private RecyclerView recyclerView,prescriptionsRecyclerView;
+    private AutoCompleteTextView drugName;
     final private int REQUEST_CODE_ASK_PERMISSIONS = 111;
 
     private File pdfFile;
@@ -86,6 +87,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         addFAB = findViewById(R.id.floatingActionButton);
+
+        Date c = Calendar.getInstance().getTime();
+        System.out.println("Current time => " + c);
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yy", Locale.getDefault());
+        date = df.format(c);
+
+
+        prescriptionsRecyclerView = findViewById(R.id.patientRecyclerView);
+        prescriptionsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        prescriptionArrayList = new ArrayList<>();
+        prescriptionAdapter = new PrescriptionAdapter(this, prescriptionArrayList);
+        Log.e("Prescriptions", prescriptionArrayList.toString());
+        prescriptionsRecyclerView.setAdapter(prescriptionAdapter);
+        prescriptionsRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
 
 
@@ -116,16 +132,25 @@ public class MainActivity extends AppCompatActivity {
         save = contactPopupView.findViewById(R.id.saveButton);
         cancel = contactPopupView.findViewById(R.id.cancelButton);
 //        drugName = findViewById(R.id.drugName);
-        String[] drugs = {"Dolo", "doo", "ddadasda", "dadsd", "drwerex", "dathdfgfg", "aasdasd", "bsdfsdf"};
 
-        String[] drugs1 = {"Zithromax 500 Tablet","Avil 25 Tablet","Allegra 120mg","Augmentin 625 Duo ","Aciloc 150","Alex","Avomine","Asthalin 100mcg ","Atarax 25mg Tablet","Benadryl ","Buscopan 20mg","Betnesol Tablet","Chymoral Forte Tablet","Combiflam Tablet","Cetrizine Tablet","Ciplox ","Crocin Advance Tablet","Calpol 650mg Tablet","Dolo 650 Tablet","Duphaston 10mg Tablet","Drotin-M Tablet","Dytor 10 Tablet","Dexona Tablet","Duraplus Tablet","Ecosprin 75 Tablet","Evion LC Tablet","Emeset 4 Tablet","Enzomac Plus Tablet","Etizola 0.25 Tablet","Eldoper 2mg Capsule","Folvite 5mg Tablet","Flexon Tablet","Fluka 150 Tablet","Febrex Plus Tablet","Flexura D Tablet","Forxiga 10mg Tablet","Gabapin NT Tablet","Gudcef 200 Tablet","Glycomet 500","Glizid-M Tablet","Glynase-MF Tablet","Hifenac-P Tablet","Hetrazan 100 Tablet","Hifenac-MR Tablet",};
-        String[] rxcode = {"226827","1037115","1190331","562251","1090518","1048075","108942","2053818","1484091","1049889","412723","105387","452454","1151552","1011482","103943","104908","1049270","1049270","201946","2609415","198369","105392","402096","103954","1008227","104894","2592914","2592243","1036807","1008064","1151552","105328","1052679","105802","1486977","2609465","309078","1043578","199825","199825","2608541","2609404","2608541"};
+        String[] drugs = {"Zithromax 500","Avil 25","Allegra 120mg","Augmentin 625 Duo","Aciloc 150","Alex","Avomine","Asthalin 100mcg ","Atarax 25mg","Benadryl","Buscopan 20mg","Betnesol","Chymoral Forte","Combiflam","Cetrizine","Ciplox ","Crocin Advance","Calpol 650mg","Dolo 650","Duphaston 10mg","Drotin-M","Dytor 10","Dexona","Duraplus","Ecosprin 75","Evion LC","Emeset 4","Enzomac Plus","Etizola 0.25","Eldoper 2mg","Folvite 5mg","Flexon","Fluka 150","Febrex Plus","Flexura D","Forxiga 10mg","Gabapin NT","Gudcef 200","Glycomet 500","Glizid-M","Glynase-MF","Hifenac-P","Hetrazan 100","Hifenac-MR","Indocap SR","Inderal 10","Levocet M","Lubrex ","Manforce 100mg","Monocef-O 200","Maxtra","Omnacortil 10","Omee","Ovral L","Otogesic Ear Drop","PAN 40","Phenergan ","Pipzo 4.5gm ","Rantac 150","Reswas","Sucral-O","Taxim-O 200","T-Bact 2%","Taxim 1gm","Ultracet","Urimax 0.4","Vigore Spray","Vomikind","Zytee RB","Drotin"};
+        String[] rxcode = {"1","226827","1037115","1190331","562251","1090518","1048075","108942","2053818","1484091","1049889","412723","105387","452454","1151552","1011482","103943","104908","1049270","1049270","201946","2609415","198369","105392","402096","103954","1008227","104894","2592914","2592243","1036807","1008064","1151552","105328","1052679","105802","1486977","2609465","309078","1043578","199825","199825","2608541","2609404","2608541","103156","1132265","2609433","1188426","213271","309078","1052679","1007257","104099","1112687","107416","284400","330144","1659149","1090517","52014","568825","1043030","106346","1656313","1152238","863669","573184","328448","2114017","23684"};
 
 
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, drugs1);
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, drugs);
 
         drugName.setAdapter(adapter);
         drugName.setThreshold(1);
+
+        drugName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                int index=drugs1.indexOf(drugName.getText().toString());
+                String item = adapterView.getItemAtPosition(i).toString();
+                index = Arrays.asList(drugs).indexOf(item);
+                Log.e("Selected", "drug is: " + item + " " + index);
+            }
+        });
 
 //        Log.e("Index", "is : " + Arrays.binarySearch(drugs1, drugName.toString()));
         dialogBuilder.setView(contactPopupView);
@@ -137,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         drugClassArrayList = new ArrayList<>();
-        drugAdapter = new DrugAdapter(this, drugClassArrayList);
+        DrugAdapter drugAdapter = new DrugAdapter(this, drugClassArrayList);
         recyclerView.setAdapter(drugAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
@@ -146,7 +171,10 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                drugClassArrayList.add(new DrugClass(drugClassArrayList.size() + 1 + " " + drugName.getText().toString(), route.getText().toString(), days.getText().toString(), morning.isChecked(), afternoon.isChecked(), night.isChecked()));
+
+
+                drugClassArrayList.add(new DrugClass(drugClassArrayList.size() + 1 ,drugName.getText().toString(), route.getText().toString(), days.getText().toString(), rxcode[index+1], morning.isChecked(), afternoon.isChecked(), night.isChecked(), date));
+
 
                 drugAdapter.notifyDataSetChanged();
 //                Log.e("Index", "is : " + Arrays.binarySearch(drugs1, drugName.getText().toString()));
@@ -159,6 +187,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     createPdf();
+                    prescriptionArrayList.add(new Prescription(name.getText().toString(), date, age.getText().toString(), bp.getText().toString(), weight.getText().toString(), sickness.getText().toString(), drugClassArrayList));
+                    prescriptionAdapter.notifyDataSetChanged();
+                    dialog.dismiss();
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -208,11 +240,11 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void createListData() {
-
-        DrugClass drug = new DrugClass("Dolo 650", "Tablet", "5", true, false, true);
-        drugClassArrayList.add(drug);
-    }
+//    private void createListData() {
+//
+//        DrugClass drug = new DrugClass("Dolo 650", "Tablet", "5", true, false, true);
+//        drugClassArrayList.add(drug);
+//    }
 
     private void createPdf() throws FileNotFoundException{
 
@@ -232,6 +264,7 @@ public class MainActivity extends AppCompatActivity {
         TextView weightPdf = invoicedDialog.findViewById(R.id.weightText);
         TextView bpPdf = invoicedDialog.findViewById(R.id.bpText);
         TextView sickPdf = invoicedDialog.findViewById(R.id.sickText);
+        TextView datePdf = invoicedDialog.findViewById(R.id.datePdf);
 
         ArrayList<String> tempDrugName = new ArrayList<>();
 
@@ -255,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
         weightPdf.setText(weight.getText().toString());
         bpPdf.setText(bp.getText().toString());
         sickPdf.setText((sickness.getText().toString()));
+        datePdf.setText(date);
 
 
 
@@ -275,6 +309,7 @@ public class MainActivity extends AppCompatActivity {
                 canvas.drawBitmap(bitmap, 0, 0, null);
                 document.finishPage(myPage1);
                 createFile();
+                invoicedDialog.dismiss();
             }
         });
 

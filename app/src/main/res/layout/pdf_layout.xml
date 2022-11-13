@@ -8,8 +8,8 @@
     <Button
         android:id="@+id/download"
         android:layout_width="120dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="80dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="32dp"
         android:text="Download"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,130 +22,256 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/download"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="84dp"
+            android:text="Digital Signature:"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listView" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="Patient's name: "
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="@+id/divider6"
+            app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="Date: "
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/datePdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/divider3"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="@+id/textView12"
+            tools:text="11-11-22" />
+
+        <TextView
             android:id="@+id/namePdf5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="212dp"
-            android:text="Sickness"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
-
-        <TextView
-            android:id="@+id/sickText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="168dp"
-            android:text="TextView"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toEndOf="@+id/namePdf"
-            app:layout_constraintTop_toTopOf="@+id/namePdf" />
-
-        <TextView
-            android:id="@+id/weightPdf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="132dp"
-            android:text="Weight"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
-
-        <TextView
-            android:id="@+id/bpPdf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="104dp"
-            android:text="BP"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/namePdf" />
-
-        <TextView
-            android:id="@+id/bpText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
-            android:text="TextView"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toEndOf="@+id/namePdf"
-            app:layout_constraintTop_toTopOf="@+id/agePdf" />
-
-        <TextView
-            android:id="@+id/weightText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
-            android:text="TextView"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toEndOf="@+id/namePdf"
-            app:layout_constraintTop_toTopOf="@+id/namePdf" />
-
-        <TextView
-            android:id="@+id/agePdf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
-            android:text="Age"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/namePdf" />
-
-        <TextView
-            android:id="@+id/ageText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toEndOf="@+id/namePdf"
-            app:layout_constraintTop_toTopOf="@+id/agePdf" />
+            android:layout_marginTop="4dp"
+            android:text="Sickness: "
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="@+id/weightPdf"
+            app:layout_constraintTop_toBottomOf="@+id/weightPdf" />
 
         <TextView
             android:id="@+id/namePdf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="44dp"
-            android:text="Name"
-            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="S.No"
+            android:textColor="#000000"
+            android:textSize="10sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            app:layout_constraintTop_toBottomOf="@+id/namePdf5" />
+
+        <TextView
+            android:id="@+id/namePdf2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Route"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/namePdf6"
+            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/namePdf3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:text="RxNorm"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/namePdf2"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toEndOf="@+id/namePdf"
+            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/namePdf4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Medicines"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/namePdf"
+            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/namePdf7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="M"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/namePdf8"
+            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/namePdf6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:text="Freq"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/namePdf7"
+            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/namePdf8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="A"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/namePdf9"
+            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/namePdf9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="N"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/sickText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Fever"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/namePdf5"
+            app:layout_constraintTop_toTopOf="@+id/namePdf5" />
+
+        <TextView
+            android:id="@+id/weightPdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Weight: "
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/bpPdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Blood Pressure: "
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/bpText"
+            app:layout_constraintTop_toTopOf="@+id/weightText" />
+
+        <TextView
+            android:id="@+id/bpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="120/80"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/ageText"
+            app:layout_constraintTop_toTopOf="@+id/bpPdf" />
+
+        <TextView
+            android:id="@+id/weightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="48Kg"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/weightPdf"
+            app:layout_constraintTop_toTopOf="@+id/weightPdf" />
+
+        <TextView
+            android:id="@+id/agePdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Age: "
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/ageText"
+            app:layout_constraintTop_toTopOf="@+id/nameText" />
+
+        <TextView
+            android:id="@+id/ageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="20"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/divider6"
+            app:layout_constraintTop_toTopOf="@+id/nameText" />
 
         <TextView
             android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/namePdf"
-            app:layout_constraintTop_toTopOf="@+id/namePdf" />
+            android:layout_marginStart="8dp"
+            android:text="Mukesh"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/textView16"
+            app:layout_constraintTop_toTopOf="@+id/textView16" />
 
         <TextView
             android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Prescription"
-            android:textSize="60sp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro"
+            android:text="PENSHAW MEDICAL COLLEGE and HOSPITALS"
+            android:textColor="#000000"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -154,14 +280,183 @@
             android:id="@+id/listView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/namePdf5" />
+            app:layout_constraintTop_toBottomOf="@+id/namePdf" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Providing Healthcare Since 1978"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/header"
+            app:layout_constraintStart_toStartOf="@+id/header"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="7, Works Road, Chromepet, Chennai - 600 044"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="email: penshawhospitals@gmail.com"
+            android:textColor="#000000"
+            android:textSize="6sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="Dr. Ramesh, M.B.B.S, M.D,"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/divider3"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="OP ID:"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="789546424"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/divider3"
+            app:layout_constraintTop_toTopOf="@+id/textView10"
+            tools:text="789546424" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Family Physician and Surgeon"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/divider3"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="23dp"
+            android:text="website: www.penshaw.com"
+            android:textColor="#000000"
+            android:textSize="6sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:text="Ph: 24215600"
+            android:textColor="#000000"
+            android:textSize="6sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/black"
+            android:backgroundTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/black"
+            android:backgroundTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/divider6"
+            app:layout_constraintEnd_toStartOf="@+id/textView10"
+            app:layout_constraintHorizontal_bias="0.78"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/logo_right_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_left_top" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

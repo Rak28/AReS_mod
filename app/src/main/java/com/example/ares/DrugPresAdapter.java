@@ -29,7 +29,7 @@ public class DrugPresAdapter extends RecyclerView.Adapter<DrugPresAdapter.DrugPr
     @NonNull
     @Override
     public DrugPresHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.listview_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.pdf_item, parent, false);
 
         return new DrugPresHolder(view);
     }
@@ -49,33 +49,40 @@ public class DrugPresAdapter extends RecyclerView.Adapter<DrugPresAdapter.DrugPr
 
     class DrugPresHolder extends RecyclerView.ViewHolder {
 
-        private TextView morning, afternoon, night;
-        private EditText route, days;
-        private TextView drugName;
+        private TextView morning, afternoon, night, rxcode, route, days, drugName, index;
+
 
         public DrugPresHolder(@NonNull View itemView) {
             super(itemView);
             morning = itemView.findViewById(R.id.morningSwitch);
             afternoon = itemView.findViewById(R.id.afternoonSwitch);
             night = itemView.findViewById(R.id.nightSwitch);
-            route = (EditText) itemView.findViewById(R.id.route);
-            days = (EditText) itemView.findViewById(R.id.days);
-            drugName = (TextView) itemView.findViewById(R.id.drugNameItem);
+            route = itemView.findViewById(R.id.route);
+            rxcode = itemView.findViewById(R.id.rxcodeText);
+            days = itemView.findViewById(R.id.days);
+            drugName = itemView.findViewById(R.id.drugNameItem);
+            index = itemView.findViewById(R.id.indexText);
         }
 
         void SetDetails(DrugClass drug) {
+            morning.setText("0");
+            afternoon.setText("0");
+            night.setText("0");
+
             if (drug.isMorning()) {
-                morning.setText("Morning");
+                morning.setText("1");
             }
             if (drug.isAfternoon()) {
-                afternoon.setText("Afternoon");
+                afternoon.setText("1");
             }
             if (drug.isNight()) {
-                night.setText("Night");
+                night.setText("1");
             }
+            rxcode.setText(drug.getRxcode());
             route.setText(drug.getRoute());
             days.setText((drug.getDays()));
             drugName.setText(drug.getDrugName());
+            index.setText(drug.getIndex() + ".");
 
 
         }

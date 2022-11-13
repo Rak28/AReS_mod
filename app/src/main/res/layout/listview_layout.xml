@@ -9,28 +9,28 @@
         android:id="@+id/drugNameItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/source_sans_pro_bold"
-        android:text="1.Dolo 650"
+        android:text="Dolo 650"
         app:layout_constraintEnd_toStartOf="@+id/route"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/indexText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/morningSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="16dp"
         android:text=" "
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/afternoonSwitch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drugNameItem" />
+        app:layout_constraintStart_toEndOf="@+id/indexText"
+        app:layout_constraintTop_toBottomOf="@+id/drugNameItem"
+        tools:text="Morning" />
 
     <TextView
         android:id="@+id/afternoonSwitch"
@@ -38,9 +38,11 @@
         android:layout_height="wrap_content"
         android:text=" "
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/morningSwitch"
         app:layout_constraintEnd_toStartOf="@+id/nightSwitch"
         app:layout_constraintStart_toEndOf="@+id/morningSwitch"
-        app:layout_constraintTop_toTopOf="@+id/morningSwitch" />
+        app:layout_constraintTop_toTopOf="@+id/morningSwitch"
+        tools:text="Afternoon" />
 
     <TextView
         android:id="@+id/nightSwitch"
@@ -49,11 +51,13 @@
         android:layout_marginEnd="16dp"
         android:text=" "
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/morningSwitch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/afternoonSwitch"
-        app:layout_constraintTop_toTopOf="@+id/afternoonSwitch" />
+        app:layout_constraintTop_toTopOf="@+id/afternoonSwitch"
+        tools:text="Night" />
 
-    <EditText
+    <TextView
         android:id="@+id/days"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -76,7 +80,7 @@
         app:layout_constraintStart_toEndOf="@+id/afternoonSwitch"
         app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
 
-    <EditText
+    <TextView
         android:id="@+id/route"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,5 +95,25 @@
         app:layout_constraintEnd_toStartOf="@+id/days"
         app:layout_constraintStart_toEndOf="@+id/drugNameItem"
         app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
+
+    <TextView
+        android:id="@+id/rxcodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/morningSwitch"
+        app:layout_constraintTop_toTopOf="@+id/morningSwitch"
+        tools:layout_editor_absoluteX="16dp"
+        tools:text="212356421" />
+
+    <TextView
+        android:id="@+id/indexText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem"
+        tools:text="1." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

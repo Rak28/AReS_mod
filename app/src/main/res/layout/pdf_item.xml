@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/namePdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="S.No"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/namePdf2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Route"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/namePdf6"
+        app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+    <TextView
+        android:id="@+id/namePdf3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:text="RxNorm"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/namePdf2"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/namePdf"
+        app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+    <TextView
+        android:id="@+id/namePdf4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Medicines"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/namePdf"
+        app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+    <TextView
+        android:id="@+id/namePdf7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="M"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/namePdf8"
+        app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+    <TextView
+        android:id="@+id/namePdf6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="Freq"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/namePdf7"
+        app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+    <TextView
+        android:id="@+id/namePdf8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="A"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/namePdf9"
+        app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+    <TextView
+        android:id="@+id/namePdf9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="N"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/namePdf" />
+
+    <TextView
+        android:id="@+id/drugNameItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:text="Dolo 650"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/namePdf4"
+        app:layout_constraintTop_toTopOf="@+id/namePdf4" />
+
+    <TextView
+        android:id="@+id/morningSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/namePdf7"
+        app:layout_constraintTop_toTopOf="@+id/days"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/afternoonSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/morningSwitch"
+        app:layout_constraintStart_toStartOf="@+id/namePdf8"
+        app:layout_constraintTop_toTopOf="@+id/morningSwitch"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/nightSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/morningSwitch"
+        app:layout_constraintStart_toStartOf="@+id/namePdf9"
+        app:layout_constraintTop_toTopOf="@+id/afternoonSwitch"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/days"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:inputType="textPersonName"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/namePdf6"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
+
+    <TextView
+        android:id="@+id/daysView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:text="day(s)"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/days"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
+
+    <TextView
+        android:id="@+id/route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Tablet"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/namePdf2"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem" />
+
+    <TextView
+        android:id="@+id/rxcodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/namePdf3"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem"
+        tools:text="212356421" />
+
+    <TextView
+        android:id="@+id/indexText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/namePdf"
+        app:layout_constraintStart_toStartOf="@+id/namePdf"
+        app:layout_constraintTop_toTopOf="@+id/drugNameItem"
+        tools:text="1." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
